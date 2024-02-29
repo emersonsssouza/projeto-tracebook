@@ -11,10 +11,10 @@
 <body>
     <section>
         <?php
-        $senha = $_REQUEST['senha'];
-        $email = $_REQUEST['email'];
-        echo "A sua senha é <strong>$senha</strong><br>";
-        echo "O seu email é <strong>$email</strong>";
+        $Senha = $_REQUEST["senha"];
+        $Email = $_REQUEST["email"];
+        echo "A sua senha é <strong>$Senha</strong><br>";
+        echo "O seu email é <strong>$Email</strong>";
         ?>
     </section>
 </body>
