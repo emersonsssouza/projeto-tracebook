@@ -1,28 +1,19 @@
-formulario = document.getElementById("formulario");
-email = document.getElementById("email");
-senha = document.getElementById("senha");
+function validarFormulario() {
+  var email = document.getElementById("email").value.trim();
+  var senha = document.getElementById("senha").value.trim();
 
-function submit() {
-  if (email.value === "") {
-    console.log("Email vazio");
-    alert("Preencha os campos");
-  } else {
-    console.log("Tudo ok");
+  if (email === "" || senha === "") {
+    document.getElementById("email").style.border = "2px solid red";
+    document.getElementById("senha").style.border = "2px solid red";
+    return false; // Impede o envio do formulário
+  } else if (email === "") {
+    alert("Por favor preencha os campos corretamente!");
+    document.getElementById("email").style.border = "2px solid red";
+    return false;
+  } else if (senha === "") {
+    alert("Por favor preencha os campos corretamente!");
+    document.getElementById("senha").style.border = "2px solid red";
+    return false;
   }
-}
-
-function isEmailValid(email) {
-  const emailRegex = new RegExp(
-    /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
-  );
-
-  if (emailRegex.test(email)) {
-    console.log("ok");
-  }
-
-  if (senha.value === "") {
-    alert("A senha está vazio");
-    return;
-  }
-  formulario.submit();
+  return true; // Permite o envio do formulário
 }
